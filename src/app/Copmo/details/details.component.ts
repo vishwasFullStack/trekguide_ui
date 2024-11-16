@@ -27,11 +27,11 @@ export class DetailsComponent implements OnInit {
           console.log(response);
           if(response !== null)
           {
-            this.TrekId = response[0].TrekId;
-            this.TrekName = response[0].TrekName;
-            this.Location = response[0].Location;
-            this.ShortTrekDetails = response[0].ShortTrekDetails;
-            this.BestTimeToVisits = response[0].BestTimeToVisits;
+            this.TrekId = response.trekId;
+            this.TrekName = response.trekName;
+            this.Location = response.location;
+            this.ShortTrekDetails = response.shortTrekDetails;
+            this.BestTimeToVisits = response.bestTimeToVisits;
           }         
         },
         error: error => console.log('Details not found' + error)
