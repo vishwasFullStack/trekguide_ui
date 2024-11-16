@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {ApiService} from '../../service'
 import { response } from 'express';
 
+
 @Component({
   selector: 'app-details',
   standalone: true,
