@@ -10,11 +10,7 @@ import { response } from 'express';
   styleUrl: './details.component.css'
 })
 export class DetailsComponent implements OnInit {
-  TrekId: string =""
-  TrekName: string = '';
-  Location: string = '';
-  ShortTrekDetails: string = '';
-  BestTimeToVisits: string = '';
+  title: string = '';
   constructor(private apiService: ApiService) {}
 
   ngOnInit(): void {
@@ -27,12 +23,12 @@ export class DetailsComponent implements OnInit {
           console.log(response);
           if(response !== null)
           {
-            this.TrekId = response[0].TrekId;
-            this.TrekName = response[0].TrekName;
-            this.Location = response[0].Location;
-            this.ShortTrekDetails = response[0].ShortTrekDetails;
-            this.BestTimeToVisits = response[0].BestTimeToVisits;
-          }         
+            this.title = response[0].trekName;
+          }
+          else{
+            this.title = 'Details not found';
+          }
+         
         },
         error: error => console.log('Details not found' + error)
       } 
